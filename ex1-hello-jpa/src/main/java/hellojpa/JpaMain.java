@@ -15,42 +15,35 @@ public class JpaMain {
         tx.begin();
 
         try {
+           /* Member member = new Member();
+            member.setUsername("C");
 
-            Member member = em.find(Member.class, 150L);
-            member.setName("ZZZ");
+            System.out.println("==============================");
+            em.persist(member);
+            System.out.println("#######  member.Id = " + member.getId() + " #######");
+            System.out.println("==============================");
 
-/*            Member findMember1 = em.find(Member.class, 101L);
-            Member findMember2 = em.find(Member.class, 101L);
+            tx.commit();*/
 
-            System.out.println("result = " + (findMember1 == findMember2));*/
+            Member member1 = new Member();
+            member1.setUsername("A");
 
+            Member member2 = new Member();
+            member2.setUsername("B");
 
-//            Member findMember = em.find(Member.class, 1L);
-//            findMember.setName("HelloJPA");
+            Member member3 = new Member();
+            member3.setUsername("C");
 
-/*            //비영속
-            Member member = new Member();
-            member.setId(101L);
-            member.setName("HelloJPA");
+            System.out.println("================================");
 
-            //영속
-            System.out.println("=== BEFORE ===");
-            em.persist(member); //저장
-            System.out.println("=== AFTER  ===");
+            em.persist(member1);
+            em.persist(member2);
+            em.persist(member3);
 
-            Member findMember = em.find(Member.class, 101L);
-
-            System.out.println("findMember.id = " + findMember.getId());
-            System.out.println("findMember.name = " + findMember.getName());*/
-
-
-//            Member member1 = new Member(150L, "A");
-//            Member member2 = new Member(160L, "B");
-//
-//            em.persist(member1);
-//            em.persist(member2);
-
-            System.out.println(" ===================== ");
+            System.out.println("memeber1 = " + member1.getId());
+            System.out.println("memeber2 = " + member2.getId());
+            System.out.println("memeber3 = " + member3.getId());
+            System.out.println("================================");
 
             tx.commit();
         } catch (Exception e) {
